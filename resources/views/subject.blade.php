@@ -125,6 +125,7 @@
                         <th class="th-list">Delete</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     @foreach ( $subjects as $subject )
                     <tr class="tr-list">
