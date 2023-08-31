@@ -1,0 +1,141 @@
+nav {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0px 10px 40px #0000000d;
+    padding: 10px 30px;
+    width: 100%;
+}
+
+nav div {
+    /* display: flex; */
+    font-family: 'Segoe UI', sans-serif;
+    align-items: center;
+    font-weight: 600;
+    color: #191919;
+}
+
+nav div font {
+    position: absolute;
+    padding-top: 12px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+nav div img {
+    width: 50px;
+    padding-top: 6px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 25px;
+    padding-top: 8px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
+    color: #191919;
+    font-weight: 600;
+    padding: 3px 0;
+    transition: all;
+    transition-duration: 300ms;
+    /* border-bottom: 1px solid rgba(6, 143, 255, 0); */
+}
+
+nav ul li a:hover {
+    color: #068FFF;
+    border-bottom: 2px solid #068FFF;
+}
+
+.dropdown {
+    /* max-width: 13em; */
+    /* margin: 80px auto 0; */
+    position: relative;
+    padding-bottom: 38px;
+    width: 100px;
+    height: 10px;
+    /* font-size: 10px; */
+}
+
+.dropdown-btn {
+    background: #1d1f24;
+    font-size: 16px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7em 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: transform ease-in-out 0.3s;
+}
+
+.dropdown-content {
+    list-style: none;
+    position: absolute;
+    padding-right: 100px;
+    top: 30px;
+    width: 200px;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.drop-div {
+    width: 150px;
+    height:150px;
+    /* border: 1px solid black; */
+    margin-top: 10px;
+    margin-left: -30px;
+}
+
+.drop-div .user {
+    position: relative;
+}
+
+.dropdown-content li {
+    background: #2f3238;
+    border-radius: 0.5em;
+    position: relative;
+    left: 100%;
+    transition: 0.5s;
+    transition-delay: calc(60ms * var(--delay));
+    width: 100px;
+}
+
+.dropdown-btn:focus + .dropdown-content li {
+    left: 0;
+}
+
+.dropdown-btn:focus + .dropdown-content {
+    visibility: visible;
+}
+
+.dropdown-btn:focus > .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-content li:hover {
+    background: #1d1f24;
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    margin: 0.1em 0;
+    text-decoration: none;
+}

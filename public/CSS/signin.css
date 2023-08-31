@@ -1,0 +1,244 @@
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F6F5FE;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.form-signin {
+    background-color: white;
+    display: flex;
+    box-shadow: 0px 10px 40px #00000014;
+    border-radius: 40px;
+    height: 480px;
+    margin-left: 200px;
+    position: static;
+    margin-top: 50px;
+    width: 900px;
+    padding: 20px;
+}
+
+/* ========== CSS GAMBAR ========== */
+
+.img-01 {
+    display: flex;
+    object-fit: cover;
+    border-radius: 30px;
+    width: 80%;
+    height: 100%;
+}
+
+.form {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 30px;
+    background-color: #fff;
+    display: block;
+    padding: 1rem;
+    max-width: 350px;
+    /* border: 1px solid #0000001a; */
+    border-radius: 40px;
+    /* box-shadow: 0px 10px 40px #00000014; */
+    height: 400px;
+}
+
+/* ========== CSS JUDUL FORM ========== */
+
+.form-title-01 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    text-align: left;
+    color: #000;
+    font-size: 28px;
+    margin-bottom: -20px;
+}
+
+.form-title-02 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 750;
+    text-align: left;
+    color: #000;
+    font-size: 28px;
+}
+
+/* ========== CSS GARIS DI BAWAH JUDUL ========== */
+
+.line-1 {
+    height: 2px;
+    background: black;
+    width: 340px;
+    margin-bottom: 20px;
+}
+
+/* ========== CSS INPUT TYPE ========== */
+
+.input-container {
+    position: relative;
+}
+
+.input-container input, .form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+}
+
+.input-container input {
+    background-color: #fff;
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 270px;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ========== CSS BUTTON SIGN IN ========== */
+
+.submit {
+    --primary-color: #645bff;
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    width: 335px;
+    text-transform: uppercase;
+    padding-left: 135px;
+}
+
+.submit .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.submit .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+.submit:hover {
+    background-color: var(--hover-color);
+}
+
+.submit:hover .arrow {
+    background: var(--secondary-color);
+}
+
+.submit:hover .arrow:before {
+    right: 0;
+}
+
+/* ========== CSS BUTTON SIGN UP ========== */
+
+.signup-link {
+    color: #6B7280;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-align: center;
+}
+
+.signup-link a {
+    text-decoration: underline;
+}
+
+/* ========== NOTIFICATION ========== */
+
+:root {
+  --primary: #0676ed;
+  --background: #222b45;
+  --warning: #f2a600;
+  --success: #12d664;
+  --error: #e41749;
+  --dark: #151a30;
+}
+
+.alert {
+  min-height: 67px;
+  width: 360px;
+  max-width: 90%;
+  border-radius: 12px;
+  padding: 16px 22px 17px 20px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  color: white;
+  font-weight: 500;
+  margin-top: -40px;
+}
+
+.alert-success {
+  background: var(--success);
+}
+
+.alert .icon__wrapper {
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.253);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.alert .icon__wrapper span {
+  font-size: 21px;
+  color: #fff;
+}
+.alert p {
+  color: #fff;
+  font-family: Verdana;
+  margin-left: 10px;
+}
+.alert p a,
+.alert p a:visited,
+.alert p a:active {
+  color: #fff;
+}
+.alert .open {
+  margin-left: auto;
+  margin-right: 5px;
+}
+.alert .close, .alert .open {
+  color: #fff;
+  transition: transform 0.5s;
+  font-size: 18px;
+  cursor: pointer;
+}
+.alert .close:hover, .alert .open:hover {
+  transform: scale(1.3);
+}

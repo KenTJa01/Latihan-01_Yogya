@@ -1,0 +1,286 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: #F6F5FE;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.content {
+    /* border: 1px solid black; */
+    width: 1100px;
+    height: 500px;
+    display: flex;
+    position: absolute;
+    top: 130px;
+}
+
+/* .image {
+    height: 403px;
+    width: 400px;
+    display: flex;
+    position: static;
+    margin-left: 15px;
+    /* border: 1px solid black;
+}
+
+.pict-profile {
+    left: 100px;
+    object-fit: cover;
+    position: static;
+    width: 400px;
+    height: 400px;
+    border-radius: 30px;
+    box-shadow: 0px 10px 40px #0000001e;
+} */
+
+.profile {
+    /* border: 1px solid black; */
+    display: flex;
+    position:absolute;
+    left: 0px;
+    width: 1100px;
+    height: 403px;
+    /* border: 1px solid black; */
+}
+
+.input-img {
+    /* position: absolute; */
+    border: 3px dotted rgb(102, 99, 255);
+    border-radius: 30px;
+    width: 300px;
+    height: 300px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.input-img .plus {
+    font-size: 40px;
+    margin-top: 110px;
+    margin-left: 135px;
+    color: rgb(102, 99, 255);
+}
+
+.input-img #button-image {
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 80px;
+    /* border: 1px solid red; */
+}
+
+.input-img img {
+    margin-top: -210px;
+    margin-left: -20px;
+    width: 350px;
+    height: 350px;
+    border-radius: 30px;
+}
+
+.info {
+    margin-top: 65px;
+    font-size: 14px;
+    width: 300px;
+}
+
+.form-profile {
+    background-color: #ffffff;
+    border: 2px solid rgba(0, 0, 0, 0.068);
+    border-radius: 30px;
+    box-shadow: 0px 10px 40px #00000014;
+    height: 485px;
+    width: 680px;
+    margin-left: 415px;
+    margin-top: -350px;
+}
+
+.form-profile p {
+    /* position: absolute; */
+    margin-top: 23px;
+    margin-left: 55px;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+/* ========== CSS GARIS DI BAWAH JUDUL ========== */
+
+.line-1 {
+    /* position: absolute; */
+    margin-top: -5px;
+    margin-left: 43px;
+    width: 590px;
+    height: 2px;
+    background: black;
+    border: 2px solid black;
+}
+
+
+
+.content-form-profile {
+    /* border: 1px solid black; */
+    width: 550px;
+    height: 250px;
+    /* position: absolute; */
+    margin-top: 15px;
+    margin-left: 40px;
+    padding-bottom: 10px;
+}
+
+.table-profile tr td {
+    /* border: 1px solid black; */
+    padding: 10px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.input-profile {
+    margin-left: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    width: 350px;
+    border: 1px solid #8d8f92;
+    border-radius: 15px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.edit {
+    --primary-color: rgb(0, 0, 0);
+    --secondary-color: #fff;
+    --hover-color: #ffb414;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight:500;
+    width: 150px;
+    height: 50px;
+    text-transform: uppercase;
+    padding-left: 60px;
+    position: absolute;
+    margin-top: -75px;
+    margin-left: 610px;
+}
+
+.edit .arrow-wrapper-end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit .arrow-end {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+
+.edit .arrow-end::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+.edit:hover {
+    background-color: var(--hover-color);
+}
+
+.edit:hover .arrow-end {
+    background: var(--secondary-color);
+}
+
+.edit:hover .arrow-end:before {
+    right: 0;
+}
+
+.logout {
+    --primary-color: rgb(0, 0, 0);
+    --secondary-color: #fff;
+    --hover-color: #ff3939;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight:500;
+    width: 195px;
+    height: 50px;
+    text-transform: uppercase;
+    padding-left: 60px;
+    position: absolute;
+    top: 410px;
+    left: 765px;
+}
+
+.logout .arrow-wrapper-end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout .arrow-end {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+
+.logout .arrow-end::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+.logout:hover {
+    background-color: var(--hover-color);
+}
+
+.logout:hover .arrow-end {
+    background: var(--secondary-color);
+}
+
+.logout:hover .arrow-end:before {
+    right: 0;
+}
+

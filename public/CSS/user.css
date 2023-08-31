@@ -1,0 +1,765 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: #F6F5FE;
+    font-family: 'Segoe UI', sans-serif;
+    justify-content: center;
+}
+
+/* ========== JUDUL MASTER DATA USER ========== */
+
+.title {
+    /* border: 1px solid black; */
+    height: 160px;
+    width: 800px;
+    margin-left: 170px;
+    display: flex;
+    justify-content: center;
+}
+
+.title p {
+    padding-top: 75px;
+    position: absolute;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+}
+
+.ellipse-2 {
+    background: linear-gradient(180deg, rgb(78, 79, 235) 0%, rgb(6, 143, 255) 100%);
+    border-radius: 473.5px/125.5px;
+    height: 251px;
+    position: absolute;
+    top: -70px;
+    width: 800px;
+}
+
+/* ========== DIV ADD NEW USER ========== */
+
+.add-user {
+    /* border: 1px solid black; */
+    position: absolute;
+    margin-left: -50px;
+    width: 1200px;
+    height: 900px;
+}
+
+.rectangle {
+    background-color: #ffffff;
+    border: 2px solid rgba(0, 0, 0, 0.068);
+    /* border: 1px solid; */
+    /* border-color: #ffffff0d; */
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000014;
+    height: 405px;
+    top: 40px;
+    left: 403px;
+    position: absolute;
+    width: 680px;
+}
+
+.bg-pict-user {
+    width: 470px;
+    height: 550px;
+    position: absolute;
+    margin-left: 33px;
+}
+
+.pict-user {
+    width: 520px;
+    height: 550px;
+    position: absolute;
+    padding-bottom: 40px;
+    margin-left: 10px;
+}
+
+.form {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 30px;
+    background-color: #fff;
+    display: block;
+    padding: 1rem;
+    max-width: 350px;
+    /* border: 1px solid #0000001a; */
+    border-radius: 40px;
+    /* box-shadow: 0px 10px 40px #00000014; */
+    height: 300px;
+}
+
+/* ========== CSS JUDUL FORM ========== */
+
+.form-title-01 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    text-align: left;
+    color: #000;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* ========== CSS GARIS DI BAWAH JUDUL ========== */
+
+.line-1 {
+    height: 2px;
+    background: black;
+    width: 590px;
+    margin-bottom: 20px;
+}
+
+/* ========== CSS INPUT ID ========== */
+
+.input-user-id {
+    position: static;
+}
+
+.input-user-id label {
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    margin-left: 69px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.input-user-id input, .form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+}
+
+.input-user-id input {
+    background-color: #fff;
+    position: absolute;
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 270px;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    margin-left: 199px;
+}
+
+/* ========== CSS INPUT NAME ========== */
+
+.input-user-name {
+    position: static;
+}
+
+.input-user-name label {
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    margin-left: 69px;
+    margin-top: 80px;
+}
+
+.input-user-name input, .form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+}
+
+.input-user-name input {
+    background-color: #fff;
+    position: absolute;
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 270px;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    margin-left: 200px;
+    margin-top: 70px;
+}
+
+/* ========== CSS INPUT PASSWORD ========== */
+
+.input-user-pass {
+    position: static;
+}
+
+.input-user-pass label {
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    margin-left: 69px;
+    margin-top: 143px;
+}
+
+.input-user-pass input, .form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+}
+
+.input-user-pass input {
+    background-color: #fff;
+    position: absolute;
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 270px;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    margin-left: 200px;
+    margin-top: 130px;
+}
+
+/* ========== CSS INPUT STATUS ========== */
+
+.input-status {
+    /* border: 1px solid black; */
+    position: absolute;
+    margin-top: 189px;
+    margin-left: 70px;
+}
+
+.input-status label {
+    font-size: 20px;
+    font-weight: 500;
+    /* position: absolute;   */
+    margin-right: 65px;
+
+}
+
+.input-status input, .form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+}
+
+.input-status .input {
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 100px;
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.checkbox {
+    display: none;
+  }
+
+.slider {
+    width: 60px;
+    height: 30px;
+    background-color: lightgray;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border: 4px solid transparent;
+    transition: .3s;
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.25) inset;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.slider::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(-30px);
+    border-radius: 20px;
+    transition: .3s;
+    box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked ~ .slider::before {
+    transform: translateX(30px);
+    box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked ~ .slider {
+    background-color: #2196F3;
+}
+
+.checkbox:active ~ .slider::before {
+    transform: translate(0);
+}
+
+/* ========== CSS BUTTON ADD NEW STUDENT ========== */
+
+.submit {
+    position: absolute;
+    top: 325px;
+    left: 248px;
+    width: 270px;
+    border: 2px solid #24b4fb;
+    background-color: #24b4fb;
+    border-radius: 0.9em;
+    padding: 0.8em 1.2em 0.8em 1em;
+    transition: all ease-in-out 0.2s;
+    font-size: 16px;
+}
+
+.submit span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+.submit:hover {
+    background-color: #0071e2;
+}
+
+/* ========== CSS EDIT NAME ========== */
+
+.edit-user-id label {
+    margin-left: 20px;
+    margin-right: 112px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.edit-user-id input, .form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+}
+
+.edit-user-id input {
+    /* background-color: #fff; */
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 270px;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    /* margin-left: 101px; */
+}
+
+/* ========== CSS EDIT NAME ========== */
+
+#editUserLabel {
+    margin-left: 20px;
+    font-weight: 700;
+}
+
+.edit-user-name label {
+    margin-left: 20px;
+    margin-right: 78px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.edit-user-name input, .form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+}
+
+.edit-user-name input {
+    /* background-color: #fff; */
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 270px;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    /* margin-left: 101px; */
+}
+
+/* ========== CSS INPUT PASSWORD ========== */
+
+.edit-user-email label {
+    margin-left: 20px;
+    margin-right: 82px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.edit-user-email input, .form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+}
+
+.edit-user-email input {
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 267px;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ========== CSS INPUT STATUS ========== */
+
+.edit-status {
+    /* border: 1px solid black; */
+    position: absolute;
+    margin-top: 189px;
+    margin-left: 70px;
+}
+
+.edit-status label {
+    font-size: 20px;
+    font-weight: 500;
+    /* position: absolute;   */
+    margin-right: 65px;
+
+}
+
+.edit-status input, .form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+}
+
+.edit-status .input {
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 100px;
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.checkbox {
+    display: none;
+  }
+
+.slider {
+    width: 60px;
+    height: 30px;
+    background-color: lightgray;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border: 4px solid transparent;
+    transition: .3s;
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.25) inset;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.slider::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(-30px);
+    border-radius: 20px;
+    transition: .3s;
+    box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked ~ .slider::before {
+    transform: translateX(30px);
+    box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked ~ .slider {
+    background-color: #2196F3;
+}
+
+.checkbox:active ~ .slider::before {
+    transform: translate(0);
+}
+
+/* ========== BUTTON EDIT FIX ========== */
+
+.edit-btn-fix {
+    border: none;
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    background-color: rgb(255, 166, 2);
+    color: #ffffff;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 15px;
+    user-select: none;
+    gap: 0.75rem;
+    box-shadow: 0 4px 6px -1px #ffd00031, 0 2px 4px -1px #ffd90017;
+    transition: all .6s ease;
+    margin-right: 150px;
+}
+
+.edit-btn-fix:hover {
+    box-shadow: 0 10px 15px 1px #ffc4008f, 0 4px 6px -2px #ffd00056;
+}
+
+.edit-btn-fix:focus,.edit-btn-fix:active {
+    opacity: .85;
+    box-shadow: none;
+}
+
+.edit-btn-fix svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.blank {
+    padding-top: 50px;
+    color: white;
+}
+
+/* ========== CSS TABEL USER ========== */
+
+.list {
+    background: linear-gradient(180deg, rgb(6, 143, 255) 20%, rgb(78, 79, 235) 100%);
+    /* border: 1px solid black; */
+    position: absolute;
+    margin-top: 540px;
+    margin-left: -275px;
+    width: 1507px;
+    height: 800px;
+
+}
+
+.list p {
+    padding-top: 40px;
+    padding-left: 140px;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+}
+
+.list-student, .tr-list, .td-list {
+    border: 1px solid white;
+}
+
+.list-student {
+	width: 900px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    margin-left: 150px;
+    word-wrap: break-word;
+    word-break: break-all;
+    table-layout: fixed;
+}
+
+.th-list {
+    text-align: center;
+}
+
+.th-list, .td-list {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+.head-list .th-list {
+	background-color: #55608f;
+}
+
+tbody .tr-list:hover {
+	background-color: rgba(255,255,255,0.3);
+
+}
+
+tbody .td-list {
+	position: relative;
+}
+
+tbody .td-list:hover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: rgba(255,255,255,0.2);
+    z-index: -1;
+}
+
+.td-action {
+    border: 1px solid white;
+	background-color: rgba(255,255,255,0.2);
+    width: 150px;
+}
+
+/* ========== CSS EDIT BUTTON ========== */
+
+.edit-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.2);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none !important;
+}
+
+.edit-svgIcon {
+    width: 17px;
+    transition-duration: 0.3s;
+}
+
+.edit-svgIcon path {
+    fill: white;
+}
+
+.edit-button:hover {
+    width: 120px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(255, 166, 2);
+    align-items: center;
+}
+
+.edit-button:hover .edit-svgIcon {
+    width: 20px;
+    transition-duration: 0.3s;
+    transform: translateY(60%);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.edit-button::before {
+    display: none;
+    content: "Edit";
+    color: white;
+    transition-duration: 0.3s;
+    font-size: 2px;
+}
+
+.edit-button:hover::before {
+    display: block;
+    padding-right: 10px;
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(0px);
+    transition-duration: 0.3s;
+}
+
+/* ========== CSS DELETE BUTTON ========== */
+
+.delete-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.2);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.delete-svgIcon {
+    width: 15px;
+    transition-duration: 0.3s;
+}
+
+.delete-svgIcon path {
+    fill: white;
+}
+
+.delete-button:hover {
+    width: 120px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+}
+
+.delete-button:hover .delete-svgIcon {
+    width: 20px;
+    transition-duration: 0.3s;
+    transform: translateY(60%);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.delete-button::before {
+    display: none;
+    content: "Delete";
+    color: white;
+    transition-duration: 0.3s;
+    font-size: 2px;
+}
+
+.delete-button:hover::before {
+    display: block;
+    padding-right: 10px;
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(0px);
+    transition-duration: 0.3s;
+}
+
+/* ========== NOTIFICATION ========== */
+
+.notification {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 70px;
+    margin-bottom: -20px;
+}
+
+.notification strong {
+    color: rgb(75, 75, 75);
+    margin-left: 3px;
+    margin-right: 335px;
+}
+
+.notification .strong-edit {
+    color: rgb(75, 75, 75);
+    margin-left: 3px;
+    margin-right: 320px;
+}
+
+.alert {
+    display: flex;
+    position: static;
+    width: 600px;
+    margin-top: 20px;
+    margin-left: 200px;
+    text-align: center;
+}
