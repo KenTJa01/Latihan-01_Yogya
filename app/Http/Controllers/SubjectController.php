@@ -35,18 +35,28 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $request->validate([
-            "subject_id" => "required|min:4",
-            "subject_name" => "required|max:255",
-            "credit" => "required",
-            "subject_pre_required" => "max:255"
-        ]);
+        $find = Subject::find($request->subject_id);
 
-        $validateData["user_id"] = auth()->user()->user_id;
+        if ($find){
 
-        Subject::create($validateData);
+            return redirect("/subject")->with("error", "ID has been used! Try another ID!");
 
-        return redirect("/subject")->with("success", "New Subject has been added!");
+        } else {
+
+            $validateData = $request->validate([
+                "subject_id" => "required|min:4",
+                "subject_name" => "required|max:255",
+                "credit" => "required",
+                "subject_pre_required" => "max:255"
+            ]);
+
+            $validateData["user_id"] = auth()->user()->user_id;
+
+            Subject::create($validateData);
+
+            return redirect("/subject")->with("success", "New Subject has been added!");
+
+        }
     }
 
     /**
@@ -97,7 +107,7 @@ class SubjectController extends Controller
 
             $deletedData->update();
 
-            return redirect("/subject")->with("success", "Subject's Data has been deleted!");
+            return redirect("/subject")->with("success-delete", "Subject's Data has been deleted!");
         }
     }
 }

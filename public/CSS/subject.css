@@ -672,6 +672,12 @@ tbody .td-list:hover:before {
     margin-right: 290px;
 }
 
+.notification .error {
+    color: rgb(75, 75, 75);
+    margin-left: 3px;
+    margin-right: 280px;
+}
+
 .alert {
     display: flex;
     position: static;

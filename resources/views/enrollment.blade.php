@@ -2,6 +2,7 @@
 
 @section('containter')
     <link rel="stylesheet" href="CSS/enrollment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     {{-- JUDUL MASTER DATA ENROLLMENT --}}
     <div class="title">
@@ -95,8 +96,8 @@
             </form>
         </div>
 
-        <img class="bg-pict-enrollment" src="IMG/bg-pict-enrollment.png" alt="bg-pict-enrollment">
-        <img class="pict-enrollment" src="IMG/pict-enrollment.png" alt="pict-enrollment">
+        <img class="bg-pict-enrollment  animate__animated animate__backInDown" src="IMG/bg-pict-enrollment.png" alt="bg-pict-enrollment">
+        <img class="pict-enrollment  animate__animated animate__backInDown" src="IMG/pict-enrollment.png" alt="pict-enrollment">
 
     </div>
 

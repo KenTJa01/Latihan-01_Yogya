@@ -81,7 +81,7 @@ body {
 .btn-submit {
     border: none;
     padding: 0.75rem 1.5rem;
-    background-color: rgb(47, 219, 47);
+    background-color: rgb(36, 44, 145);
     color: #ffffff;
     font-size: 0.75rem;
     line-height: 1rem;
@@ -92,7 +92,7 @@ body {
     align-items: center;
     border-radius: 15px;
     user-select: none;
-    box-shadow: 0 4px 6px -1px #ffd00031, 0 2px 4px -1px #ffd90017;
+    box-shadow: 0 4px 6px -1px #1506f331, 0 2px 4px -1px #ffd90017;
     transition: all .6s ease;
     height: 50px;
     margin-left: 20px;
@@ -100,7 +100,7 @@ body {
 }
 
 .btn-submit:hover {
-    box-shadow: 0 10px 15px 1px #15d8158f, 0 4px 6px -2px #3eb92056;
+    box-shadow: 0 10px 15px 1px #1815d88f, 0 4px 6px -2px #3eb92056;
 }
 
 .btn-submit:focus, .btn-submit:active {
@@ -246,3 +246,41 @@ tbody .td-list:hover:before {
      transform: translateY(0%);
     }
    }
+
+
+/* ========== BUTTON EDIT FIX ========== */
+
+.btn-export {
+    border: none;
+    padding: 0.75rem 1.5rem;
+    background-color: rgb(167, 175, 255);
+    color: #ffffff;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 15px;
+    user-select: none;
+    box-shadow: 0 4px 6px -1px #6f00ff31, 0 2px 4px -1px #ffd90017;
+    transition: all .6s ease;
+    height: 50px;
+    margin-left: -20px;
+    margin-top: 23px;
+}
+
+.btn-export:hover {
+    box-shadow: 0 10px 15px 1px #0804ff8f, 0 4px 6px -2px #3eb92056;
+}
+
+.btn-export:focus, .btn-export:active {
+    opacity: .85;
+    box-shadow: none;
+}
+
+.btn-export svg {
+    width: 1rem;
+    height: 1rem;
+}

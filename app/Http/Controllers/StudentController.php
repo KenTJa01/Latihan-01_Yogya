@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Http\Requests\UpdateStudentRequest;
 use Illuminate\Auth\Events\Validated;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
@@ -35,18 +37,30 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $request->validate([
-            "student_id" => "required|min:5",
-            "student_name" => "required|max:255",
-            "date_of_birth" => "required",
-            "year_entrance" => "required"
-        ]);
+        $find = Student::find($request->student_id);
 
-        $validateData["user_id"] = auth()->user()->user_id;
+        if ($find){
 
-        Student::create($validateData);
+            return redirect("/student")->with("error", "ID has been used! Try another ID!");
 
-        return redirect("/student")->with("success", "New Student has been added!");
+        } else {
+
+            $validateData = $request->validate([
+                "student_id" => "required|min:5",
+                "student_name" => "required|max:255",
+                "date_of_birth" => "required",
+                "year_entrance" => "required"
+            ]);
+
+            $validateData["user_id"] = auth()->user()->user_id;
+
+            Student::create($validateData);
+
+            return redirect("/student")->with("success", "New Student has been added!");
+
+
+        }
+
 
     }
 
@@ -99,7 +113,7 @@ class StudentController extends Controller
 
             $deletedData->update();
 
-            return redirect("/student")->with("success", "Student's Data has been deleted!");
+            return redirect("/student")->with("success-delete", "Student's Data has been deleted!");
         }
     }
 }

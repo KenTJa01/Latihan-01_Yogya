@@ -381,7 +381,7 @@ body {
     /* margin-left: 101px; */
 }
 
-/* ========== CSS INPUT PASSWORD ========== */
+/* ========== CSS EDIT EMAIL ========== */
 
 .edit-user-email label {
     margin-left: 20px;
@@ -397,6 +397,31 @@ body {
 }
 
 .edit-user-email input {
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 267px;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ========== CSS EDIT FLAG ========== */
+
+.edit-user-flag label {
+    margin-left: 20px;
+    margin-right: 72px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.edit-user-flag select, .form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+}
+
+.edit-user-flag select {
     padding: 1rem;
     padding-right: 3rem;
     font-size: 0.875rem;
@@ -753,6 +778,12 @@ tbody .td-list:hover:before {
     color: rgb(75, 75, 75);
     margin-left: 3px;
     margin-right: 320px;
+}
+
+.notification .error {
+    color: rgb(75, 75, 75);
+    margin-left: 3px;
+    margin-right: 280px;
 }
 
 .alert {

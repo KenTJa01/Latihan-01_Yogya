@@ -33,7 +33,6 @@ Route::post('/logout', [SigninController::class, 'logout']);
 Route::get('/signup', [SignupController::class, 'index']);
 Route::post('/signup', [SignupController::class, 'store']);
 
-
 Route::get('/student', [StudentController::class, 'index']);
 Route::post('/student', [StudentController::class, 'store']);
 Route::post('/student/edit', [StudentController::class, 'update']);
@@ -57,3 +56,4 @@ Route::post('/profile', [ProfileController::class, 'edit']);
 Route::get('/user', [UserController::class, 'index']);
 Route::post('/user', [UserController::class, 'store']);
 Route::post('/user/edit', [UserController::class, 'update']);
+Route::post('/user/delete', [UserController::class, 'delete']);

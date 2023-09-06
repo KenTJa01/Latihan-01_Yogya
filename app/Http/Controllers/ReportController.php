@@ -38,14 +38,19 @@ class ReportController extends Controller
 
         $subjects = Subject::orderBy("subject_id", "asc")->get();
         $students = Student::orderBy("student_id", "asc")->get();
-        $entrances = Student::orderBy("year_entrance", "asc")->get();
+
+        $year = Student::select("year_entrance")->orderBy("year_entrance", "asc")->distinct()->get();
+        $student = Student::select("student_name")->orderBy("student_name", "asc")->distinct()->get();
+        $subject = Subject::select("subject_name")->orderBy("subject_name", "asc")->distinct()->get();
 
 
         return view("report", [
             "subjects" => $subjects,
             "students" => $students,
             "reports" => $reports,
-            "entrances" => $entrances,
+            "yearDatas" => $year,
+            "studentDatas" => $student,
+            "subjectDatas" => $subject,
             "year" => $yearFilter,
             "student" => $studentFilter,
             "subject" => $subjectFilter

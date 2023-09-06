@@ -9,9 +9,10 @@ class UserController extends Controller
 {
     public function index()
     {
-        $flag = 1;
+        $flagActive = 1;
+        $flagNonActive = 0;
 
-        $usersFilter = User::where("flag_active", $flag)->orderby("user_id", "asc")->get();
+        $usersFilter = User::where("flag_active", $flagActive)->orWhere("flag_active", $flagNonActive)->orderby("user_id", "asc")->get();
 
         return view('user', [
             'users' => $usersFilter,
@@ -20,20 +21,35 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            "user_id" => "required|min:4",
-            "name" => "required",
-            "password" => "required|min:5|max:255",
-            "flag_active"
-        ]);
+        $find = User::find($request->user_id);
 
-        $validatedData["password"] = bcrypt($validatedData["password"]);
-        $validatedData["flag_active"] = $request->flag_active;
+        if ($find){
 
-        User::create($validatedData);
+            return redirect("/user")->with("error", "ID has been used! Try another ID!");
 
-        return redirect("/user")->with("success", "Registration successfull!! Please Login");
+        } else {
+            $validatedData = $request->validate([
+                "user_id" => "required|min:4",
+                "name" => "required",
+                "password" => "required|min:5|max:255",
+                "flag_active"
+            ]);
 
+            $validatedData["password"] = bcrypt($validatedData["password"]);
+            if ( $request->flag_Active != 1 )
+            {
+                $flagNonActive = 0;
+                $validatedData["flag_active"] = $flagNonActive;
+
+            } else {
+                $flagActive = 1;
+                $validatedData["flag_active"] = $flagActive;
+            }
+
+            User::create($validatedData);
+
+            return redirect("/user")->with("success", "Registration successfull!! Please Login");
+        }
     }
 
     public function update(Request $request)
@@ -48,7 +64,21 @@ class UserController extends Controller
 
             $updateData->update();
 
-            return redirect('/user')->with('success', "Subject's Data has been updated!");
+            return redirect('/user')->with('success-edit', "Subject's Data has been updated!");
+        }
+    }
+
+    public function delete(Request $request)
+    {
+        $deletedData = User::find($request->user_id);
+
+        if ($deletedData != null)
+        {
+            $deletedData->flag_active = "2";
+
+            $deletedData->update();
+
+            return redirect("/user")->with("success-delete", "User's Data has been deleted!");
         }
     }
 

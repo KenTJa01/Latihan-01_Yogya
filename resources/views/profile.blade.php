@@ -4,48 +4,9 @@
     <link rel="stylesheet" href="CSS/profile.css">
 
     <div class="content">
-        {{-- <div class="image">
-            <img class="pict-profile" alt="pict-profile" src="IMG/pict-profile.jpg" />
-        </div> --}}
 
-        {{-- <form class="custom__form">
+        <div class="container-profile">
 
-            <div class="container-img">
-
-                <figure class="image-container">
-                    <img id="chosen-image">
-                    <figcaption id="file-name">
-                    </figcaption>
-                </figure>
-
-                <input type="file" id="upload-button" accept="image/*">
-                <button type="submit" class="edit-img">
-                    Choose a Photo
-                </button>
-            </div>
-
-            <div class="pict-profile">
-
-            </div>
-            <div class="custom__image-container">
-                <label id="add-img-label" for="add-single-img">insert image</label>
-                <input type="file" id="add-single-img" accept="image/jpeg" />
-            </div>
-            <input
-              type="file"
-              id="image-input"
-              name="photos"
-              accept="image/jpeg"
-              multiple
-            />
-            <br/>
-            <button type="submit" class="edit-img">
-                edit image
-            </button>
-
-        </form> --}}
-
-        <div class="profile">
             {{-- BUTTON LOGOUT --}}
             <form action="/logout" method="post">
                 @csrf
@@ -62,6 +23,7 @@
             <form action="/profile" method="post" enctype="multipart/form-data">
                 @csrf
 
+                {{-- INPUT IMAGE PROFILE --}}
                 <div class="input-img">
 
                     <div class="plus">
@@ -73,6 +35,7 @@
                             <input type="file" class="form-control d-none" name="image" id="image" />
                         </div>
                     </div>
+
                     @if (auth()->user()->image  != null)
 
                         <img src="storage/{{ auth()->user()->image }}">
@@ -119,8 +82,6 @@
                         </table>
                     </div>
 
-
-
                 </div>
 
                 <button type="submit" class="edit">
@@ -131,35 +92,5 @@
 
         </div>
     </div>
-
-    <script>
-        document.getElementById("add-single-img").
-
-
-        // const imgInputHelper = document.getElementById("add-single-img");
-        // const imgInputHelperLabel = document.getElementById("add-img-label");
-        // const imgContainer = document.querySelector(".custom__image-container");
-        // const imgFiles = [];
-
-        // const addImgHandler = () => {
-        //     const file = imgInputHelper.files[0];
-        //     if (!file) return;
-        //     // Generate img preview
-        //     const reader = new FileReader();
-        //     reader.readAsDataURL(file);
-        //     reader.onload = () => {
-        //         const newImg = document.createElement("img");
-        //         newImg.src = reader.result;
-        //         imgContainer.insertBefore(newImg, imgInputHelperLabel);
-        //     };
-
-        //     // Store img file
-        //     imgFiles.push(file);
-        //     // Reset image input
-        //     imgInputHelper.value = "";
-        //     return;
-        // };
-        // imgInputHelper.addEventListener("change", addImgHandler);
-    </script>
 
 @endsection

@@ -2,12 +2,25 @@
 
 @section('containter')
     <link rel="stylesheet" href="CSS/subject.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     {{-- JUDUL MASTER DATA SUBJECT --}}
     <div class="title">
         <div class="ellipse-2" ></div>
         <p>Master Data Subject</p>
     </div>
+
+    {{-- ERROR --}}
+    @if (session()->has('error'))
+        <div class="notification">
+
+            <div class="alert alert-danger" role="alert">
+                <strong class="error">ID has been used! Try another ID!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+        </div>
+    @endif
 
     {{-- SESSION --}}
     @if (session()->has('success'))
@@ -24,8 +37,19 @@
     @if (session()->has('success-edit'))
         <div class="notification">
 
-            <div class="alert alert-warning" role="alert">
-                <strong class="strong-edit">New Subject has been updated!</strong>
+            <div class="alert alert-success" role="alert">
+                <strong class="strong-edit">The Subject has been updated!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+        </div>
+    @endif
+
+    @if (session()->has('success-delete'))
+        <div class="notification">
+
+            <div class="alert alert-success" role="alert">
+                <strong class="strong-edit">The Subject has been deleted!</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
 
@@ -105,8 +129,8 @@
             </form>
         </div>
 
-        <img class="bg-pict-subject" src="IMG/bg-pict-subject.png" alt="bg-pict-subject">
-        <img class="pict-subject" src="IMG/pict-subject.png" alt="pict-subject">
+        <img class="bg-pict-subject  animate__animated animate__backInDown" src="IMG/bg-pict-subject.png" alt="bg-pict-subject">
+        <img class="pict-subject  animate__animated animate__backInDown" src="IMG/pict-subject.png" alt="pict-subject">
 
     </div>
 
@@ -134,14 +158,15 @@
                         <td class="td-list">{{ $subject->credit }}</td>
                         <td class="td-list">{{ $subject->subject_pre_required }}</td>
                         <td class="td-action" align="center">
-                            <button class="edit-button" data-bs-toggle="modal" data-bs-target="#editSubject{{ $subject->subject_id }}">
+                            <button class="edit-button editSubject
+                            editSubject" data-bs-toggle="modal" data-bs-target="#editSubject" data-subject="{{ $subject }}">
                                 <svg class="edit-svgIcon" viewBox="0 0 512 512">
                                     <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
                                 </svg>
                             </button>
                         </td>
                         <td class="td-list" align="center">
-                            <button class="delete-button" data-bs-toggle="modal" data-bs-target="#deleteSubject{{ $subject->subject_id }}">
+                            <button class="delete-button deleteSubject" data-bs-toggle="modal" data-bs-target="#deleteSubject" data-id="{{ $subject->subject_id }}">
                                 <svg class="delete-svgIcon" viewBox="0 0 448 512">
                                     <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
                                 </svg>
@@ -156,10 +181,9 @@
     </div>
 
     {{-- MODAL EDIT SUBJECT --}}
-    @foreach ( $subjects as $subject )
 
         {{-- DIV MODAL TARGETING FROM BUTTON --}}
-        <div class="modal fade" id="editSubject{{ $subject->subject_id }}" tabindex="-1" aria-labelledby="editSubjectLabel" aria-hidden="true">
+        <div class="modal fade" id="editSubject" tabindex="-1" aria-labelledby="editSubjectLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
 
@@ -176,7 +200,7 @@
                                 <td>
                                     <div class="edit-id">
                                         <label for="subject_id" class="form-label">ID</label>
-                                        <input type="text" value="{{ $subject->subject_id }}" name="subject_id" id="subject_id" placeholder="Enter id" required value="{{ old("subject_id") }}" readonly>
+                                        <input type="text" name="subject_id" id="subjectID" readonly>
                                     </div>
                                 </td>
                             </tr>
@@ -184,7 +208,7 @@
                                 <td>
                                     <div class="edit-name">
                                         <label for="subject_name" class="form-label">Name</label>
-                                        <input type="text" value="{{ $subject->subject_name }}" name="subject_name" id="subject_name" placeholder="Enter name" required value="{{ old("subject_name") }}">
+                                        <input type="text" name="subject_name" id="subjectName" >
                                     </div>
                                 </td>
                             </tr>
@@ -192,16 +216,16 @@
                                 <td>
                                     <div class="edit-credit">
                                         <label for="credit" class="form-label">Credit</label>
-                                        <input type="number" value="{{ $subject->credit }}" name="credit" id="credit" placeholder="Enter name" required value="{{ old("credit") }}">
+                                        <input type="number" name="credit" id="subjectCredit">
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="edit-preRequired">
-                                        <label for="subject_pre_required" class="form-label">Pre-required</label>
-                                        <select name="subject_pre_required" id="subject_pre_required">
-                                            <option value="{{ $subject->subject_pre_required }}">{{ $subject->subject_pre_required }}</option>
+                                        <label for="subjectPreRequired" class="form-label">Pre-required</label>
+                                        <select name="subject_pre_required" id="subjectPreRequired">
+                                            <option value="">Select Pre-required</option>
                                             @foreach ( $subjects as $subject )
                                                 <option value="{{ $subject->subject_id }}">{{ $subject->subject_id . " - " . $subject->subject_name }}</option>
                                             @endforeach
@@ -227,13 +251,11 @@
             </div>
         </div>
 
-    @endforeach
 
     {{-- MODAL DELETE SUBJECT --}}
-    @foreach ( $subjects as $subject )
 
         {{-- DIV MODAL TARGETING FROM BUTTON --}}
-        <div class="modal fade" id="deleteSubject{{ $subject->subject_id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="deleteSubject" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -247,18 +269,37 @@
                         </div>
                         <div class="modal-body">
                             ARE YOU SURE WANT TO DELETE THIS SUBJECT?
-                            <input type="text" value="{{ $subject->subject_id }}" name="subject_id" id="subject_id" placeholder="Enter id" hidden readonly>
+                            <input type="hidden" value="secret" name="subject_id" id="subjectID_delete">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button class="btn btn-danger">DELETE</button>
+                            <button  type="submit" class="btn btn-danger">DELETE</button>
                         </div>
+
                     </form>
 
                 </div>
             </div>
         </div>
 
-    @endforeach
+    <script>
+
+        // -- SCRIPT MODAL EDIT
+        $('.editSubject').click(function(){
+            const dataSubject = $(this).data('subject');
+            $('#subjectID').val(dataSubject.subject_id);
+            $('#subjectName').val(dataSubject.subject_name);
+            $('#subjectCredit').val(dataSubject.credit);
+            $('#subjectPreRequired').val(dataSubject.subject_pre_required);
+            $('#flag_active').val(dataSubject.flag_active);
+        })
+
+        // -- SCRIPT MODAL DELETE
+        $('.deleteSubject').click(function(){
+            const dataSubject = $(this).data('id');
+            $('#subjectID_delete').val(dataSubject);
+        })
+
+    </script>
 
 @endsection

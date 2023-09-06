@@ -16,11 +16,6 @@
         </div>
     @endif
 
-    {{-- <div class="alert alert-success" id="success-signup" role="alert">
-        hai
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div> --}}
-
     {{-- SESSION --}}
     @if (session()->has('loginError'))
         <div class="alert alert-danger col-lg-10" role="alert">
